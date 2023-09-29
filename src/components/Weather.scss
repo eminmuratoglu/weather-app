@@ -25,13 +25,20 @@
     input, button {
       @include input-items
     }
+    button {
+      cursor: pointer;
+    }
   }
   
-  button {
-    cursor: pointer;
+  .zipCodeError {
+    color: darkorange;
+    display: block;
+    margin-top: 0.3rem;
   }
+  
   
   .currentWeather {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;

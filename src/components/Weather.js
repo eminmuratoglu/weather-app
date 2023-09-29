@@ -22,7 +22,6 @@ const Weather = () => {
     else {
       try {
         const { data } = await axios.get(`${BASE_COORDINATES_API_URL}/zip?zip=${zipCode},US&appid=${API_KEY}`)
-        console.log(data);
         setCoordinates(data);
         return data
       } catch (error) {
@@ -39,7 +38,6 @@ const Weather = () => {
     try {
       const { data } = await axios.get(`${BASE_WEATHER_API_URL}onecall?lat=${coords?.lat}&lon=${coords?.lon}&units=imperial&exclude=hourly,minutely,daily&appid=${API_KEY}`)
       setWeatherData(data)
-      console.log(data);
     } catch (error) {
       console.log(error)
     }
@@ -52,17 +50,16 @@ const Weather = () => {
   return <main className='weather__container'>
     <div>
       <h1 className='mainHeader'>Weather App</h1>
-      {/* <h5 style={{margin: '0 0 .3rem 0'}}>Enter your area's zipcode.</h5> */}
       <div className='input-items'>
         <input type='number' placeholder='Enter zipcode...' onChange={onZipCodeInputChange} />
         <button onClick={getWeatherInfo} type='submit'>Search</button>
       </div>
       {zipCodeError &&
-        <small style={{ color: 'darkorange', display: 'block', marginTop: '0.3rem' }}>Please enter a valid US zipcode!</small>
+        <small className='zipCodeError'>Please enter a valid US zipcode!</small>
       }
     </div>
     {!zipCodeError && <>
-      <section className='currentWeather' style={{ marginTop: '1rem' }}>
+      <section className='currentWeather'>
         {
           Object.keys(weatherData).length > 0 &&
           <>
