@@ -1,0 +1,77 @@
+@mixin input-items {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  
+  &:hover, &:focus {
+    background-color: #cecece;
+  }
+}
+
+.weather__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .mainHeader {
+    text-align: center;
+  }
+  
+  .input-items {
+    display: flex;
+    gap: 0.5rem;
+    
+    input, button {
+      @include input-items
+    }
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .currentWeather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__coreInfo {
+      display: flex;
+      align-items: center;
+      font-size: 50px;
+      
+      .degree-letters {
+        font-size: 17px;
+        align-self: flex-start;
+        margin-top: 1.8rem;
+        letter-spacing: 4.5px;
+        
+        .letter-f, .letter-c {
+          cursor: pointer;
+          color: rgb(160, 160, 160);
+          
+          &.active {
+            color: limegreen;
+            font-weight: 600;
+          }
+        }
+      }
+      
+      &-details {
+        font-size: 13px;
+        align-self: flex-start;
+        margin: 1.8rem 0 0 0.7rem;
+        font-style: italic;
+        font-weight: 200;
+      }
+    }
+    
+    &__description {
+      margin: 0;
+      font-style: italic;
+      // align-self: flex-start;
+      margin-top: -0.75rem;
+    }
+  }
+}
