@@ -17,4 +17,5 @@
 * Delivered as Docker container via Dockerfile
 * Styled with SCSS
 
-
+Author: Emin Muratoglu <br />
+[Linkedin](https://linkedin.com/in/emin-muratoglu-ba287516b)
