@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import { convertFahreneitToCelcius } from '../utils/utils'
 import './Weather.scss';
 
-const BASE_COORDINATES_API_URL = 'http://api.openweathermap.org/geo/1.0'
+const BASE_COORDINATES_API_URL = 'https://api.openweathermap.org/geo/1.0'
 const BASE_WEATHER_API_URL = 'https://api.openweathermap.org/data/3.0/'
 const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
