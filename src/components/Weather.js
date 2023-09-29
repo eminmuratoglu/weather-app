@@ -99,9 +99,6 @@ const Weather = () => {
           </>
         }
       </section>
-      <section className='dailyWeather'>
-
-      </section>
     </>}
   </main>;
 };
